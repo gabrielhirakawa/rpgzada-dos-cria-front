@@ -12,15 +12,23 @@ export const Container = styled.div`
     }
 
     span{
-        color: #C01717;
+        color: #ffad33;
     }
 `;
 
+export const Content = styled.div`
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px;
+`;
+
 export const ButtonLoggout = styled.button`
-    margin: 20px;
+    margin-bottom: 30px;
     border: none;
     border-radius: 4px;
-    padding: 10px 20px;
+    padding: 10px 40px;
     color: #fff;
     background-color: #C01717;
 

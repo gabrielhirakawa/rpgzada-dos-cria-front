@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 
 import api from '../../services/api';
 import { Input, Form, Content, Button } from "./styles";
+import logo from '../../assets/logo.png';
 
 
 export default function Login({ history }) {
@@ -13,31 +14,31 @@ export default function Login({ history }) {
   async function login(e) {
     e.preventDefault();
     const response = await api.post('/sessions', { email: user, password }).catch(e => console.log('error login'));
-    if(!response){
+    if (!response) {
       toast.error('Erro ao fazer login');
     }
-    else{
-      
+    else {
+
       localStorage.setItem("token", response.data.token)
       toast.success('logado com sucesso!');
       history.push('/home');
     }
   }
 
-  useEffect(()=> {
+  useEffect(() => {
     const token = localStorage.getItem("token");
-    if(token){
+    if (token) {
       history.push("/home")
     }
   }, [])
 
   return (
     <Content>
-      <h1>Rpgzada dos cria</h1>
+      <img src={logo} alt="rpgzada dos cria" />
       <Form onSubmit={login}>
         <Input onChange={e => setUser(e.target.value)} placeholder="Usuário" />
         <Input onChange={e => setPassword(e.target.value)} placeholder="Senha" type="password" />
-        <Button type="submit">Entrar!</Button>
+        <Button type="submit">ENTRAR!</Button>
       </Form>
     </Content>
   );

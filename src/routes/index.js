@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Switch } from "react-router-dom";
+import { HashRouter, Switch } from "react-router-dom";
 import Route from './Route';
 
 import Login from "../pages/Login";
@@ -8,13 +8,13 @@ import Home from '../pages/Home';
 
 export default function Routes() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Switch>
         <Route path="/" exact component={Login} />
         <Route path="/home" component={Home} isPrivate />
         <Route path="/newficha" component={Ficha} isPrivate />
         
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { Container, ButtonLoggout, Cards, CardItem } from './styles';
+import { Container, ButtonLoggout, Cards, CardItem, Content } from './styles';
 
 import ficha from '../../assets/icons/ficha.png';
 import beast from '../../assets/icons/beast.png';
@@ -21,25 +21,27 @@ export default function Home({ history }) {
     }
     return (
         <Container>
+            <Content>
             <h1>Bem vindo <span>{user.toUpperCase()}</span>!</h1>
             <Cards>
                 <CardItem>
-                    <img src={ficha} />
+                    <img src={ficha} alt="fichas" />
                     <span>Fichas</span>
                 </CardItem>
                 <CardItem>
-                    <img src={beast} />
+                    <img src={beast} alt="monstros" />
                     <span>Monstros</span>
                 </CardItem>
                 <CardItem>
-                    <img src={skills} />
+                    <img src={skills} alt="habilidades" />
                     <span>Habilidades</span>
                 </CardItem>
                 <CardItem>
-                    <img src={sword} />
+                    <img src={sword} alt="itens" />
                     <span>Itens</span>
                 </CardItem>
             </Cards>
+            </Content>
             <ButtonLoggout type="button" onClick={loggout}>Sair</ButtonLoggout>
         </Container>
     )
